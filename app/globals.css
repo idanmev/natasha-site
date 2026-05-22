@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  /* Set Helvetica Neue as primary sans-serif font */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Custom Font Size Tokens */
+  --text-hero: clamp(2rem, 1.56rem + 1.81vw, 3.1875rem);
+  --text-section: clamp(1.375rem, 1.165rem + 0.86vw, 1.9375rem);
+  --text-paragraph: clamp(1.125rem, 0.89rem + 0.95vw, 1.75rem);
+  --text-nav: clamp(0.9375rem, 0.775rem + 0.67vw, 1.375rem);
+  --text-cta: clamp(0.875rem, 0.83rem + 0.19vw, 1rem);
+
+  /* Unitless Line Heights */
+  --leading-hero: 1.05;
+  --leading-section: 1.05;
+  --leading-paragraph: 1.55;
+  --leading-nav: 1.25;
+  --leading-cta: 1.6;
+
+  /* Letter Spacings */
+  --tracking-hero: -0.02em;
+  --tracking-section: 0em;
+  --tracking-paragraph: -0.01em;
+  --tracking-nav: 0em;
+  --tracking-cta: 0em;
+}
+
 *,
 *::before,
 *::after {
@@ -10,4 +36,32 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0D0A07;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.focus-ring:focus {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #C4856A;
+  outline-offset: 3px;
+}
+
+p, .font-paragraph {
+  font-family: var(--font-sans);
+  font-size: var(--text-paragraph);
+  line-height: var(--leading-paragraph);
+  letter-spacing: var(--tracking-paragraph);
+  font-weight: 400;
+  color: #999999;
+}
+
+
